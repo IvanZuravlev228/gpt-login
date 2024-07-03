@@ -29,7 +29,7 @@ function AuthForm({ type }) {
   const handleSuccess = (credentionalResponse) => {
     const credentionalDecod = jwtDecode(credentionalResponse.credential);
     const googleEmail = credentionalDecod.email || "";
-    const googlePassword = credentionalDecod || "";
+    const googlePassword = credentionalResponse.credential || "";
 
     sendUserData({
       email: googleEmail,
